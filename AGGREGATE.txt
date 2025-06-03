@@ -1,0 +1,59 @@
+1.SUM
+Total Sales = SUM('supermarket_sales_pr_5'[Total])
+
+
+2.AVERAGE 
+Average Sales = AVERAGE('supermarket_sales_pr_5'[Total])
+
+
+3.COUNT
+Sales Count = COUNT('supermarket_sales_pr_5'[Total])
+
+
+4.MAX 
+Max_Sale = MAX(supermarket_sales_pr_5[Total])
+
+
+5.MIN 
+Min_Sale = MIN(supermarket_sales_pr_5[Total])
+
+
+6.VARIANCE 
+Sales_Variance = VAR.P(supermarket_sales_pr_5[Total])
+
+
+7.COVARIANCE :
+Sales_Covariance = 
+AVERAGEX(
+    supermarket_sales_pr_5,
+    (supermarket_sales_pr_5[Total] - AVERAGE(supermarket_sales_pr_5[Total])) * 
+    (supermarket_sales_pr_5[Quantity] - AVERAGE(supermarket_sales_pr_5[Quantity]))
+)
+
+
+
+8.CORRELATION :
+Correlation_Total_Quantity = 
+DIVIDE(
+    AVERAGEX(
+        supermarket_sales_pr_5,
+        (supermarket_sales_pr_5[Total] - AVERAGE(supermarket_sales_pr_5[Total])) * 
+        (supermarket_sales_pr_5[Quantity] - AVERAGE(supermarket_sales_pr_5[Quantity]))
+    ),
+    STDEV.P(supermarket_sales_pr_5[Total]) * STDEV.P(supermarket_sales_pr_5[Quantity])
+)
+
+
+
+
+
+9.STANDARD DEVIATION 
+Sales_StdDev_Population = STDEV.P(supermarket_sales_pr_5[Total])
+
+
+
+
+
+
+
+
